@@ -1,0 +1,55 @@
+{
+  "name": "kamori",
+  "productName": "Kamori",
+  "version": "1.0.0",
+  "description": "Unofficial Desktop WhatsApp app",
+  "license": "MIT",
+  "repository": "joezo/kamori",
+  "author": {
+    "name": "Joe Warren",
+    "email": "joezo156@gmail.com",
+    "url": "joezo.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "electronVersion": "0.33.0",
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "build": "electron-packager . $npm_package_productName --overwrite --out=dist --ignore='^/dist$' --ignore='^/media$' --prune --asar --platform=darwin --arch=x64 --icon=media/Icon.icns --app-bundle-id=com.joezo.kamori --app-version=$npm_package_version --version=$npm_package_electronVersion && cd dist/Kamori-darwin-x64 && zip -ryXq9 ../Kamori-${npm_package_version}.zip Kamori.app"
+  },
+  "files": [
+    "index.js",
+    "browser.js",
+    "browser.css",
+    "menu.js",
+    "media/Icon.icns"
+  ],
+  "keywords": [
+    "electron-app",
+    "whatsapp",
+    "chat",
+    "instant",
+    "messaging",
+    "kamori"
+  ],
+  "dependencies": {
+    "electron-debug": "^0.2.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^5.1.0",
+    "electron-prebuilt": "^0.33.0",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ],
+    "ignores": [
+      "dist/**"
+    ]
+  }
+}

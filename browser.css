@@ -1,0 +1,8 @@
+html {
+  overflow: hidden;
+}
+
+/* hide users avatar to stop it from appearing under the window controls */
+#side > header > div.pane-list-user > div {
+  display: none;
+}
